@@ -12,6 +12,7 @@ const AddBlog = () => {
 
 const handleCreateBlog=(data)=>{
 dispatch(addBlog(data))
+ dispatch(fetchBlog());
 if(status==STATUSES.SUCCESS){
   navigate('/')
 }

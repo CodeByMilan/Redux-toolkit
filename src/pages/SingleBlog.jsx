@@ -20,6 +20,7 @@ const SingleBlog = () => {
 
   const handleDelete= () => {
     dispatch(deleteBlog(id))
+    dispatch(fetchBlog());
     if(status==STATUSES.SUCCESS){
         navigate("/")
     }

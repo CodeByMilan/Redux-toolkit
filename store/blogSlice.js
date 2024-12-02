@@ -65,7 +65,7 @@ export function fetchBlog() {
   };
 }
 
-export function deleteBlog(id, token) {
+export function deleteBlog(id) {
   return async function deleteBlogThunk(dispatch) {
     dispatch(setStatus(STATUSES.LOADING));
     try {
@@ -84,7 +84,7 @@ export function deleteBlog(id, token) {
     }
   };
 }
-export function updateBlog(id, token, data) {
+export function updateBlog(id, data) {
   return async function updateBlogThunk(dispatch) {
     dispatch(setStatus(STATUSES.LOADING));
     try {
@@ -93,8 +93,8 @@ export function updateBlog(id, token, data) {
           Authorization: localStorage.getItem("token"),
         },
       });
-      if (response.status == 201) {
-        dispatch(setBlog(response.data));
+      if (response.status == 200) {
+        dispatch(setBlog(response.data.data));
         dispatch(setStatus(STATUSES.SUCCESS));
       } else {
         dispatch(setStatus(STATUSES.ERROR));
