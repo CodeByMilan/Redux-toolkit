@@ -25,7 +25,7 @@ return (
   <>
     <div className="flex items-center mt-0 justify-center h-screen">
       <div className="shadow-md p-10 w-[60%] max-w-md">
-      <p> {type=='Login' && ` Welcome ${user?.data?.username}` }</p>
+      <p> {type=='Login' ? ` Welcome ${user?.data?.username}`:"" }</p>
 
         <h1 className="text-center font-serif font-bold text-3xl mb-10">
           {type}
